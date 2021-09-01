@@ -1,0 +1,6 @@
+channels:
+  - defaults
+
+show_channel_urls: true
+report_errors: true
+ssl_verify: true
