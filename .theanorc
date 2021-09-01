@@ -1,0 +1,14 @@
+[global]
+device=cpu
+## JS NOTE at 2021-09-01
+## Seeing compiler locks, this might be a solution as suggested here
+## https://discourse.pymc.io/t/issues-parallelizing-pymc3-model-with-the-multiprocessing-library/7655/2
+config.compile.timeout = 1000
+## JS NOTE at 2020-05-01 
+## the cxx flag might be useful on e.g a Windows machine (G++, C++ Compiler)
+## but by default theano uses clang on MacOS installed via xcode-select
+## just for posterity, this is the link to g++ as installed by brew
+## ALSO NOTE: using this generates an error: 
+## """WARNING (theano.configdefaults): Only clang++ is supported. 
+##    With g++, we end up with strange g++/OSX bugs."""
+# cxx=/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9
